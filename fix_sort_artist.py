@@ -24,17 +24,16 @@
 
 import os
 import sys
-import re
 import ogg.vorbis
 import eyeD3
 
 def cleanup_tag(s):
 	# Remove the ([u') & (']) from the vorbis tag
-	pattobj1 = re.compile("\[u'")
-	pattobj2 = re.compile("'\]")
-	tag = re.sub(pattobj1, "", s)
-	tag = re.sub(pattobj2, "", tag)
-	return tag
+	stripchars = ["[u'","']"]
+	for char in stripchars:
+		s = s.replace(char, "")
+		print s
+	return s
 
 def get_original_artist_tag(f):
 	vf = ogg.vorbis.VorbisFile(f)
