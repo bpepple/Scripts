@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 #
-# Copyright (C) 2010 Brian Pepple <bpepple@fedoraproject.org>
+# Copyright (C) 2010-2012 Brian Pepple <bpepple@fedoraproject.org>
 
 import os
 import sys
@@ -32,7 +32,6 @@ def cleanup_tag(s):
 	stripchars = ["[u'","']"]
 	for char in stripchars:
 		s = s.replace(char, "")
-		print s
 	return s
 
 def get_original_artist_tag(f):
