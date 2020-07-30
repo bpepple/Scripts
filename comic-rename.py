@@ -7,7 +7,7 @@ import string
 def cleanup_filename(strname):
 	(strfile, strext) = os.path.splitext(strname)
 	strext = string.strip(strext)
-	if strext.lower() == '.cbr' or strext.lower() == '.cbz':
+	if strext.lower() in ['.cbr', '.cbz']:
 		pattobj = re.compile("\(+(.*)")
 		pattobj2 = re.compile("__")
 		pattobj3 = re.compile("_")

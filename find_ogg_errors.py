@@ -30,8 +30,7 @@ def vorbisInfo(currdir, f):
 	(sout,serr) = myprocess.communicate()
 	for line in sout.split('\n'):
 		if line.strip().startswith('WARNING:'):
-			m = line.strip()[len("WARNING:"):].replace("WARNING:"," ") 
-			return m
+			return line.strip()[len("WARNING:"):].replace("WARNING:"," ")
 
 # Walk thru the directory, and pass any vorbis files to be ran with ogginfo.
 def findError(currdir):
